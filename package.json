@@ -1,0 +1,23 @@
+{
+  "name": "face-api-deteccao-faces",
+  "version": "1.0.0",
+  "description": "Teste técnico para bolsista na Appia Tech",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoRVargas/face-api-deteccao-faces.git"
+  },
+  "author": "NicoRVargas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicoRVargas/face-api-deteccao-faces/issues"
+  },
+  "homepage": "https://github.com/NicoRVargas/face-api-deteccao-faces#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
