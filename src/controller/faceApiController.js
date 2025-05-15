@@ -27,21 +27,3 @@ export const processImage = async (req, res) => {
             res.status(500).json({ error: "Erro ao processar imagem." });
         });
 };
-
-export const showResultPage = (req, res) => {
-    if (!lastProcessedFilename) {
-        return res.status(404).send("Nenhuma imagem processada.");
-    }
-
-    const imageUrl = `/output-image/${lastProcessedFilename}`;
-    res.send(`
-      <html>
-        <head><title>Resultado</title></head>
-        <body>
-          <h1>Rosto Detectado</h1>
-          <img src="${imageUrl}" alt="Imagem com rosto detectado" style="max-width: 100%; height: auto;" />
-          <br><a href="/">Voltar</a>
-        </body>
-      </html>
-    `);
-};

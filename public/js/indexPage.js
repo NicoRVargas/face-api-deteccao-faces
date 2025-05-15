@@ -38,7 +38,7 @@ form.addEventListener("submit", async (e) => {
         const formData = new FormData();
         formData.append("image", file);
 
-        const res = await fetch("/upload", {
+        const res = await fetch("/process-image", {
             method: "POST",
             body: formData,
         });
