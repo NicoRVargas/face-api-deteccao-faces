@@ -1,5 +1,5 @@
 import express from "express";
-import { processImage, sendMainPage } from "../controller/faceApiController.js";
+import { processImage, sendMainPage, showResultPage } from "../controller/faceApiController.js";
 import path from "path";
 import multer from "multer";
 import { fileURLToPath } from "url";
@@ -22,5 +22,7 @@ const upload = multer({ storage });
 router.get("/", sendMainPage);
 
 router.post("/upload", upload.single("image"), processImage);
+
+router.get("/result", showResultPage)
 
 export default router;

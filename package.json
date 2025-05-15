@@ -1,6 +1,7 @@
 {
   "name": "face-api-deteccao-faces",
   "version": "1.0.0",
+  "type": "module",
   "description": "Teste técnico para bolsista na Appia Tech",
   "main": "src/app.js",
   "scripts": {
