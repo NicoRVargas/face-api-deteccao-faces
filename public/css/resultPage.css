@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    padding: 30px;
+    margin: 0;
+}
+
+.info-box {
+    max-width: 40%;
+}
+
+.info-box h2 {
+    background-color: #0077cc;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.face-img {
+    max-width: 50%;
+    border: 2px solid #0000aa;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #0000aa;
+    font-size: 24px;
+}

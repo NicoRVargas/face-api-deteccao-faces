@@ -8,15 +8,18 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Porta definida no .env ou 3000 por padrão
 const PORT = 3000;
 
-// Middleware para parsear JSON e dados de formulário
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Servir arquivos estáticos da pasta "public"
 app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "public", "html")));
+app.use(express.static(path.join(__dirname, "..", "public", "css")));
+app.use(express.static(path.join(__dirname, "..", "public", "js")));
+app.use(express.static(path.join(__dirname, "..", "public", "img")));
+app.use(express.static(path.join(__dirname, "..", "uploads")));
+app.use(express.static(path.join(__dirname, "..", "output-image")));
 
 app.use("/", faceApiRouter);
 
@@ -24,7 +27,6 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
-// Inicia o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

@@ -23,19 +23,26 @@ export async function processImageFaceApi(filename) {
     const ctx = canv.getContext("2d");
     ctx.drawImage(img, 0, 0);
 
-    const detections = await faceapi.detectAllFaces(img).withFaceLandmarks();
+    const detections = await faceapi.detectAllFaces(canv);
+    const resizedDetections = faceapi.resizeResults(detections, {
+        width: img.width,
+        height: img.height,
+    });
 
-    faceapi.draw.drawDetections(canv, detections);
-    faceapi.draw.drawFaceLandmarks(canv, detections);
+    faceapi.draw.drawDetections(canv, resizedDetections);
 
-    // Salva imagem anotada
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
+
     const out = fs.createWriteStream(outputPath);
     const stream = canv.createPNGStream();
     await new Promise((resolve) => stream.pipe(out).on("finish", resolve));
 
     return {
-        message: "Imagem processada com sucesso.",
-        facesDetected: detections.length,
-        annotatedImage: `/uploads/${outputFilename}`,
+        mensagem: "Imagem processada com sucesso.",
+        quantidade_total_de_rostos_detectados: detections.length,
+        imagem_original: `/${filename}`,
+        imagem_alterada: `/${outputFilename}`,
     };
 }

@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Welcome to the HTML page!</h1>
-    <p>This is a simple HTML document.</p>
-    <!-- <script src="script.js"></script> -->
-  </body>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste Técnico - Appia Tech</title>
+        <link rel="stylesheet" href="/css/indexPage.css" />
+    </head>
+    <body>
+        <h1>TESTE TÉCNICO<br />APPIA TECH</h1>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label class="upload-box" for="imageInput">
+                <img
+                    id="previewImage"
+                    style="display: none"
+                    alt="Pré-visualização da imagem"
+                />
+                <span id="plusSign" class="plus-sign">+</span>
+                <span
+                    id="checkIcon"
+                    style="display: none; color: green; font-size: 48px"
+                    >✔</span
+                >
+                <input
+                    type="file"
+                    name="image"
+                    id="imageInput"
+                    accept="image/*"
+                />
+            </label>
+            <button type="submit" id="submitBtn">Enviar</button>
+        </form>
+
+        <footer>Nicolas de Vargas</footer>
+
+        <script src="/js/indexPage.js"></script>
+    </body>
 </html>
